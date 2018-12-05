@@ -26,7 +26,7 @@ namespace MAPPhoneBook
 
             MAPPhoneBookLocalizationConfigurer.Configure(Configuration.Localization);
 
-            // Enable this line to create a multi-tenant application.
+            // 是否启用多租户
             Configuration.MultiTenancy.IsEnabled = MAPPhoneBookConsts.MultiTenancyEnabled;
 
             // Configure roles
