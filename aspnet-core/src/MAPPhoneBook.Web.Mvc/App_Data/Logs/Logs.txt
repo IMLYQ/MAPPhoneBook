@@ -20232,3 +20232,5 @@ INFO  2018-12-05 19:41:22,218 [12   ] soft.AspNetCore.Hosting.Internal.WebHost -
 INFO  2018-12-05 19:41:22,284 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=ugtpZg6EVnOudThrkjxX2Q  
 INFO  2018-12-05 19:41:22,731 [7    ] .AspNetCore.SignalR.HubConnectionContext - Completed connection handshake. Using HubProtocol 'json'.
 DEBUG 2018-12-05 19:41:22,956 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"ugtpZg6EVnOudThrkjxX2Q","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2018-12-05T19:41:22.7793098+08:00","Properties":{}}
+DEBUG 2018-12-05 19:46:26,288 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: ugtpZg6EVnOudThrkjxX2Q
+INFO  2018-12-05 19:46:26,330 [22   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 304046.0258ms 101 
