@@ -19,21 +19,21 @@ namespace MAPPhoneBook.PhoneBooks.Persons
         /// </summary>
      
         [Required]
-        [MaxLength(50)]
+        [MaxLength(MAPPhoneBookConsts.MaxNameLength)]
         public string Name { get; set; }
 
         /// <summary>
         /// 邮箱地址
         /// </summary>
         [EmailAddress]
-        [MaxLength(80)]
+        [MaxLength(MAPPhoneBookConsts.MaxEmailLength)]
         public string EmailAddress { get; set; }
 
         /// <summary>
         /// 地址信息
         /// </summary>
         /// 
-        [MaxLength(200)]
+        [MaxLength(MAPPhoneBookConsts.MaxAddressLength)]
         public string Address { get; set; }
     }
 }
