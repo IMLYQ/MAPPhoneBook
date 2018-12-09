@@ -44,7 +44,12 @@ namespace MAPPhoneBook.Web.Startup
                         icon: "local_offer",
                         requiredPermissionName: PermissionNames.Pages_Roles
                     )
-                )
+                ).AddItem(
+                new MenuItemDefinition(
+                    PageNames.Persons,
+                    new FixedLocalizableString("联系人"), 
+                    url: "Persons",
+                    icon: "local_offer"))
                 .AddItem(
                     new MenuItemDefinition(
                         PageNames.About,
