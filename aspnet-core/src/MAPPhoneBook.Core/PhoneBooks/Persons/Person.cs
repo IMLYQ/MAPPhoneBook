@@ -1,5 +1,6 @@
 ﻿using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
+using MAPPhoneBook.PhoneBooks.PhoneNumbers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -35,5 +36,10 @@ namespace MAPPhoneBook.PhoneBooks.Persons
         /// 
         [MaxLength(MAPPhoneBookConsts.MaxAddressLength)]
         public string Address { get; set; }
+
+        /// <summary>
+        /// 电话号码的导航属性
+        /// </summary>
+        public ICollection<PhoneNumber> PhoneNumbers { get; set; }
     }
 }

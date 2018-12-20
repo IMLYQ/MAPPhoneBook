@@ -11,7 +11,7 @@ using Abp.Linq.Extensions;
 using Abp.UI;
 using MAPPhoneBook.Dtos;
 using MAPPhoneBook.PhoneBooks.Dtos;
-using MAPPhoneBook.PhoneBooks.Persons;
+//using MAPPhoneBook.PhoneBooks.Persons;
 using Microsoft.EntityFrameworkCore;
 
 namespace MAPPhoneBook.PhoneBooks
@@ -19,9 +19,9 @@ namespace MAPPhoneBook.PhoneBooks
     public class PersonAppService : MAPPhoneBookAppServiceBase, IPersonAppService
     {
 
-        private readonly IRepository<Person> _personrepository;
+        private readonly IRepository<Persons.Person> _personrepository;
 
-        public PersonAppService(IRepository<Person> personrepository)
+        public PersonAppService(IRepository<Persons.Person> personrepository)
         {
             _personrepository = personrepository;
         }
@@ -56,15 +56,16 @@ namespace MAPPhoneBook.PhoneBooks
 
         public async Task<PagedResultDto<PersonListDto>> GetPagedPersonAsync(GetPersonInput input)
         {
-            var query = _personrepository.GetAll();
+            var query = _personrepository.GetAllIncluding(a => a.PhoneNumbers);
+
             var personCount = await query.CountAsync();
+
             var persons = await query.OrderBy(input.Sorting).PageBy(input).ToListAsync();
 
-            //将查询到的数据转换为List
             var dtos = persons.MapTo<List<PersonListDto>>();
 
-            //返回总数和查询到的实体信息
             return new PagedResultDto<PersonListDto>(personCount, dtos);
+
         }
 
         public Task<PersonListDto> GetPersonByIdAsync()
@@ -89,9 +90,9 @@ namespace MAPPhoneBook.PhoneBooks
         }
 
         protected async Task CreatePersonAsync(PersonEditDto input)
-        {
-            await _personrepository.InsertAsync(input.MapTo<Person>());
+        { 
+            await _personrepository.InsertAsync(input.MapTo<Persons.Person>());
 
-        }
+        }  
     }
 }

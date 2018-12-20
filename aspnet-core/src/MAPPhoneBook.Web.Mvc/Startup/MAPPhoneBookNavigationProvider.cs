@@ -44,11 +44,9 @@ namespace MAPPhoneBook.Web.Startup
                         icon: "local_offer",
                         requiredPermissionName: PermissionNames.Pages_Roles
                     )
-                ).AddItem(
-                new MenuItemDefinition(
-                    PageNames.Persons,
-                    new FixedLocalizableString("联系人"), 
-                    url: "Persons",
+                ).AddItem(new MenuItemDefinition(PageNames.Persons,
+                    new FixedLocalizableString("联系人"),
+                    url: "Persons?skipCount=0&maxResultCount=10",
                     icon: "local_offer"))
                 .AddItem(
                     new MenuItemDefinition(

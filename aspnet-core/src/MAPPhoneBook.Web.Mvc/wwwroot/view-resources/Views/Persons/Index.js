@@ -2,8 +2,7 @@
 
     $(function () {
         var _personService = abp.services.app.person;
-
-        var _$modal = $("#PersonCreateModel");
+        var _$modal = $("#PersonCreateModal");
 
         var _$form = _$modal.find('form');
 
@@ -16,17 +15,23 @@
             }
             var personEditDto = _$form.serializeFormToObject();//序列化表单为对象
 
+            personEditDto.PhoneNumbers = [];
+            var phoneNumber = {};
+            phoneNumber.Type = personEditDto.PhoneNumberType;
+            phoneNumber.Number = personEditDto.PhoneNumber;
+            personEditDto.PhoneNumbers.push(phoneNumber);
+
             //增加一个前端的机制，防止用户重复提交  设置忙碌状态
             abp.ui.setBusy(_$modal);
 
             //约定大约配置
-            _personService.createOrUpdatePerson({personEditDto}).done(function () {
-                _$modal.model('hide');  //隐藏模态框
+            _personService.createOrUpdatePerson({ personEditDto }).done(function () {
+                _$modal.modal('hide');  //隐藏模态框
                 //重新加载数据
-                location.reload();
+                location.reload(true);
             }).always(function () {
                 abp.ui.clearBusy(_$modal);
-            });
+                });
         });
     });
 })();

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
+using Abp.AspNetCore.Mvc.Authorization;
+using MAPPhoneBook.Authorization;
 using MAPPhoneBook.Controllers;
 using MAPPhoneBook.Dtos;
 using MAPPhoneBook.PhoneBooks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MAPPhoneBook.Web.Mvc.Controllers
-{
+{ 
     public class PersonsController : MAPPhoneBookControllerBase
     {
 
@@ -19,10 +22,10 @@ namespace MAPPhoneBook.Web.Mvc.Controllers
             _personAppService = personAppService;
         }
 
-        public async Task<IActionResult> Index(GetPersonInput input)
+        public async Task<ActionResult> Index(GetPersonInput input)
         {
             //Persons?skipCount=0&maxResultCount=10   访问Person报错时是由于没有传入分页参数
-            var dtos = await _personAppService.GetPagedPersonAsync(input);
+             var dtos = await _personAppService.GetPagedPersonAsync(input);  
             return View(dtos);
         }
     }

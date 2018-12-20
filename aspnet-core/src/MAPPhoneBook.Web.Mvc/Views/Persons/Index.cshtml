@@ -2,15 +2,15 @@
 @using MAPPhoneBook
 @using MAPPhoneBook.Web.Startup
 @using MAPPhoneBook.PhoneBooks.Dtos
-@model Abp.Application.Services.Dto.PagedResultDto<PersonListDto>
+@model Abp.Application.Services.Dto.PagedResultDto<MAPPhoneBook.PhoneBooks.Dtos.PersonListDto>
 @{
     ViewBag.CurrentPageName = PageNames.Persons; // The menu item will be active for this page.
 }
 @section scripts
     {
-<environment names="Development">
-    <script src="~/view-resources/Views/Persons/Index.js" asp-append-version="true"></script> 
-</environment>
+    <environment names="Development">
+        <script src="~/view-resources/Views/Persons/Index.js" asp-append-version="true"></script>
+    </environment>
 
 }
 <div class="row clearfix">
