@@ -34,6 +34,25 @@
             });
         });
 
+
+        //修改联系人
+        $('.edit-person').click(function (e) {
+            e.preventDefault();
+
+            var personId = $(this).attr("data-person-id");
+            
+            _personService.getPersonForEdit({ id: personId }).done(function (data) {
+                $("input[name=Id]").val(data.person.id);
+                $("input[name=Name]").val(data.person.name).parent().addClass('focused');
+                $("input[name=EmailAddress]").val(data.person.emailAddress).parent().addClass('focused');
+             //   $("input[name=PhoneNumber]").val(data.person.phoneNumbers[0].number).parent().addClass('focused');
+               // $("select[name=PhoneNumberType]").selectpicker('val', data.person.phoneNumbers[0].type);
+                $("input[name=Address]").val(data.person.address).parent().addClass('focused');
+                 
+            });
+			
+        }); 
+
         //绑定删除事件  --delete-person为删除li中的class
         $('.delete-person').click(function () {
             var personId = $(this).attr("data-person-id"); //获取用户的ID

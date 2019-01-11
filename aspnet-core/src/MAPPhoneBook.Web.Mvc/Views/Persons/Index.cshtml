@@ -26,7 +26,7 @@
                             <i class="material-icons">more_vert</i>
                         </a>
                         <ul class="dropdown-menu pull-right">
-                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("刷新")</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -35,11 +35,11 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>@L("Name")</th>
-                            <th>@L("EmailAddress")</th>
-                            <th>@L("Address")</th>
-                            <th>@L("CreationTime")</th>
-                            <th>@L("Actions")</th>
+                            <th>@L("姓名")</th>
+                            <th>@L("邮箱地址")</th>
+                            <th>@L("地址")</th>
+                            <th>@L("创建时间")</th>
+                            <th>@L("操作")</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,8 +55,8 @@
                                         <i class="material-icons">menu</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="#" class="waves-effect waves-block edit-person" data-person-id="@person.Id" data-toggle="modal" data-target="#PersonEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
-                                        <li><a href="#" class="waves-effect waves-block delete-person" data-person-id="@person.Id" data-person-name="@person.Name"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block edit-person" data-person-id="@person.Id" data-toggle="modal" data-target="#PersonCreateModal"><i class="material-icons">edit</i>@L("修改")</a></li>
+                                        <li><a href="#" class="waves-effect waves-block delete-person" data-person-id="@person.Id" data-person-name="@person.Name"><i class="material-icons">delete_sweep</i>@L("删除")</a></li>
                                     </ul>
                                 </td>
                             </tr>
@@ -75,7 +75,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">
-                    <span>@L("CreateNewPerson")</span>
+                    <span>@L("联系人")</span>
                 </h4>
             </div>
             <div class="modal-body">
@@ -87,7 +87,8 @@
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <input class="form-control" type="text" name="Name" required maxlength="@MAPPhoneBookConsts.MaxNameLength" minlength="2">
-                                            <label class="form-label">@L("Name")</label>
+                                            <input type="hidden" name="Id">
+                                            <label class="form-label">@L("姓名")</label>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +98,7 @@
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <input class="form-control" type="text" name="EmailAddress" required maxlength="@MAPPhoneBookConsts.MaxEmailLength" minlength="2">
-                                            <label class="form-label">@L("EmailAddress")</label>
+                                            <label class="form-label">@L("邮箱地址")</label>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +108,7 @@
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <input class="form-control" type="text" name="Address" required maxlength="@MAPPhoneBookConsts.MaxAddressLength" minlength="2">
-                                            <label class="form-label">@L("Address")</label>
+                                            <label class="form-label">@L("地址")</label>
                                         </div>
                                     </div>
                                 </div>
@@ -115,8 +116,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
-                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("取消")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("保存")</button>
                     </div>
                 </form>
             </div>

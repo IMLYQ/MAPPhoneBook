@@ -68,14 +68,9 @@ namespace MAPPhoneBook.PhoneBooks
 
         }
 
-        public Task<PersonListDto> GetPersonByIdAsync()
+        public async Task<PersonListDto> GetPersonByAsync(EntityDto input)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task<PersonListDto> GetPersonByIdAsync(NullableIdDto input)
-        {
-            var person = await _personrepository.GetAsync(input.Id.Value);
+            var person = await _personrepository.GetAsync(input.Id);
             return person.MapTo<PersonListDto>();
 
         }
@@ -90,9 +85,31 @@ namespace MAPPhoneBook.PhoneBooks
         }
 
         protected async Task CreatePersonAsync(PersonEditDto input)
-        { 
+        {
             await _personrepository.InsertAsync(input.MapTo<Persons.Person>());
 
-        }  
+        }
+
+        public async Task<GetPersonForEditOutput> GetPersonForEditAsync(NullableIdDto<int> input)
+        {   //定义输出的实体
+            var output = new GetPersonForEditOutput();
+            //定义转换的实体
+            PersonEditDto personEditDto;
+
+            if (input.Id.HasValue)
+            {
+                var entity = await _personrepository.GetAllIncluding(a => a.PhoneNumbers)
+                    .FirstOrDefaultAsync(a => a.Id == input.Id.Value);
+                personEditDto = entity.MapTo<PersonEditDto>();
+            }
+            else
+            {
+                personEditDto = new PersonEditDto();
+            }
+
+            output.Person = personEditDto;
+            return output;
+
+        }
     }
 }

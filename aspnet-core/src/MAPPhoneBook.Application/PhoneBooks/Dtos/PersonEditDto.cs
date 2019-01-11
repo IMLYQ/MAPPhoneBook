@@ -8,7 +8,7 @@ using System.Text;
 
 namespace MAPPhoneBook.PhoneBooks.Dtos
 {
-    [AutoMapTo(typeof(Person))]
+    [AutoMapTo(typeof(Persons.Person))]
     public class PersonEditDto 
     {
 

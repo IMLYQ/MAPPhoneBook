@@ -20,5 +20,9 @@
         /// 最大地址长度
         /// </summary>
         public const int MaxAddressLength = 200;
+        /// <summary>
+        /// 最大电话长度
+        /// </summary>
+        public const int MaxPhoneNumberLength = 11;
     }
 }

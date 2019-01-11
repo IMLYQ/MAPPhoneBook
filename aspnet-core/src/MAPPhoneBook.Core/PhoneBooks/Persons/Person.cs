@@ -40,6 +40,7 @@ namespace MAPPhoneBook.PhoneBooks.Persons
         /// <summary>
         /// 电话号码的导航属性
         /// </summary>
+        [MaxLength(MAPPhoneBookConsts.MaxPhoneNumberLength)]
         public ICollection<PhoneNumber> PhoneNumbers { get; set; }
     }
 }

@@ -22,7 +22,9 @@ namespace MAPPhoneBook.PhoneBooks
         /// 根据ID获取相关用户信息
         /// </summary>
         /// <returns></returns>
-        Task<PersonListDto> GetPersonByIdAsync(NullableIdDto input);
+        Task<PersonListDto> GetPersonByAsync(EntityDto input);
+
+      //  Task<PersonListDto> GetPersonByAsync(string id);
 
         /// <summary>
         /// 新增或者更改联系人信息
@@ -36,5 +38,7 @@ namespace MAPPhoneBook.PhoneBooks
         /// <param name="input"></param>
         /// <returns></returns>
         Task DeletePersonAsync(EntityDto input);
+
+        Task<GetPersonForEditOutput> GetPersonForEditAsync(NullableIdDto<int> input);
     }
 }
