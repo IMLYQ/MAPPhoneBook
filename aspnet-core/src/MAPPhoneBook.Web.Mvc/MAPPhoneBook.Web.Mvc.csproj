@@ -26,6 +26,7 @@
     <ProjectReference Include="..\MAPPhoneBook.Web.Core\MAPPhoneBook.Web.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Abp.MailKit" Version="4.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.0">
       <PrivateAssets>all</PrivateAssets>

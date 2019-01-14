@@ -20,6 +20,13 @@ namespace MAPPhoneBook.EntityFrameworkCore.Seed.Host
             // Emailing
             AddSettingIfNotExists(EmailSettingNames.DefaultFromAddress, "admin@mydomain.com");
             AddSettingIfNotExists(EmailSettingNames.DefaultFromDisplayName, "mydomain.com mailer");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.Port, "587");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.Host, "smtp.qq.com");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.UserName, "1451468553@qq.com");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.Password, "kwclqbivyrdjgfdb");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.Domain, "");
+            AddSettingIfNotExists(EmailSettingNames.Smtp.EnableSsl, "true"); 
+            AddSettingIfNotExists(EmailSettingNames.Smtp.UseDefaultCredentials, "false");
 
             // Languages
             AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "en");

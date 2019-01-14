@@ -8,6 +8,9 @@ using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
+using Abp.Net.Mail.Smtp;
+using Abp.Notifications;
+using Abp.Runtime.Session;
 using Abp.UI;
 using MAPPhoneBook.Dtos;
 using MAPPhoneBook.PhoneBooks.Dtos;
@@ -20,10 +23,16 @@ namespace MAPPhoneBook.PhoneBooks
     {
 
         private readonly IRepository<Persons.Person> _personrepository;
+        private readonly ISmtpEmailSenderConfiguration _smtpEmailSenderConfiguration;
+        private readonly INotificationPublisher _notificationPublisher;
 
-        public PersonAppService(IRepository<Persons.Person> personrepository)
+
+        public PersonAppService(IRepository<Persons.Person> personrepository, ISmtpEmailSenderConfiguration smtpEmialSenderConfigtion, INotificationPublisher notificationPublisher)
         {
             _personrepository = personrepository;
+            _smtpEmailSenderConfiguration = smtpEmialSenderConfigtion;
+            _notificationPublisher = notificationPublisher;
+
         }
 
         public async Task CreateOrUpdatePersonAsync(CreateOrUpdatePersonInput input)
@@ -38,6 +47,17 @@ namespace MAPPhoneBook.PhoneBooks
             else
             {
                 await CreatePersonAsync(input.PersonEditDto);
+
+                #region 新增用户邮箱提示 
+                SmtpEmailSender smtpEmailSender = new SmtpEmailSender(_smtpEmailSenderConfiguration);
+                string message = "新增了一个用户:" + input.PersonEditDto.Name + "";
+                //Send('发送邮箱地址'，'接收邮箱地址'，'标题'，'消息内容'); 
+                smtpEmailSender.Send("1451468553@qq.com", "1509272779@qq.com", "新增用户邮件", message); 
+                #endregion
+
+                //页面新增提示
+                _notificationPublisher.Publish("NewTask", new MessageNotificationData(message), null, NotificationSeverity.Info, new[] { AbpSession.ToUserIdentifier() });
+
             }
 
         }
