@@ -20,6 +20,78 @@
     <text name="LogIn" value="登录" />
     
     <text name="LoginFailed" value="登录失败!" />
+    <text name="NameSurname" value="姓 名" />
+    <text name="UserName" value="用户名称" />
+    <text name="Name" value="名称" />
+    <text name="Surname" value="姓" />
+    <text name="EmailAddress" value="电子邮件地址" />
+    <text name="Tenants" value="租户" />
+    <text name="SavedSuccessfully" value="保存成功" />
+    <text name="CreateNewTenant" value="创建一个租户" />
+    <text name="AdminEmailAddress" value="管理员的电子邮件地址" />
+    <text name="Save" value="保存" />
+    <text name="Cancel" value="取消" />
+    <text name="TenantName_Regex_Description" value="租户名称必须至少 2 个字符开头的一封信并继续字母、数字、破折号或下划线。" />
+    <text name="DefaultPasswordIs" value="默认密码{0}" />
+    <text name="CanBeEmptyToLoginAsHost" value="可以是空的作为主机登录." />
+    <text name="Register" value="注册" />
+    <text name="OrLoginWith" value="或登录" />
+    <text name="WaitingForActivationMessage" value="您的帐户正在等待由系统管理员激活。" />
+    <text name="TenantSelection" value="租户选择" />
+    <text name="TenantSelection_Detail" value="请选择以下租户之一。" />
+    <text name="Logout" value="注销" />
+    <text name="RegisterFormUserNameInvalidMessage">请不要输入用户名的电子邮件地址</text>
+    <text name="DatabaseConnectionString" value="数据库连接字符串" />
+    <text name="Users" value="用户" />
+    <text name="IsActive" value="处于活动状态" />
+    <text name="FullName" value="全名" />
+    <text name="CreateNewUser" value="创建新用户" />
+    <text name="Yes" value="是" />
+    <text name="No" value="否" />
+    <text name="Optional" value="可选" />
+    <text name="LeaveEmptyToSwitchToHost">留空以切换到主机</text>
+    <text name="CurrentTenant">当前租户</text>
+    <text name="NotSelected">未选中</text>
+    <text name="Change">更改</text>
+    <text name="ChangeTenant">更改租户</text>
+    <text name="MultiLevelMenu">多级菜单</text>
+    <text name="Back">返回</text>
+    <text name="SuccessfullyRegistered">注册成功</text>
+    <text name="WaitingForEmailActivation">您的电子邮件地址应该被激活</text>
+    <text name="Roles">角色</text>
+    <text name="DisplayName">默认名称</text>
+    <text name="Edit">编辑</text>
+    <text name="Delete">删除</text>
+    <text name="CreateNewRole">创建新角色</text>
+    <text name="RoleName">角色名称</text>
+    <text name="Actions">动作</text>
+    <text name="CouldNotCompleteLoginOperation">无法完成登录操作。请稍后再试</text>
+    <text name="CouldNotValidateExternalUser">无法验证外部用户</text>
+    <text name="EditRole">编辑角色</text>
+    <text name="EditTenant">编辑租户</text>
+    <text name="EditUser">编辑用户</text>
+    <text name="TenantIdIsNotActive{0}">租户ID {0} 未处于活动状态</text>
+    <text name="UnknownTenantId{0}">Unknown tenantId {0}</text>
+    <text name="ThisFieldIsRequired">This field is required</text>
+    <text name="PleaseWait">Please wait...</text>
+    <text name="Administration">Administration</text>
+    <text name="ClearAll">Clear all</text>
+    <text name="ClearOthers">Clear others</text>
+    <text name="LabelOptions">Label options</text>
+    <text name="Permissions">Permissions</text>
+    <text name="RoleDescription">Role description</text>
+    <text name="Refresh">Refresh</text>
+    <text name="Create">Create</text>
+    <text name="UserDetails">User details</text>
+    <text name="UserRoles">User roles</text>
+    <text name="ConfirmPassword">Confirm password</text>
+    <text name="Version">Version</text>
+    <text name="On">On</text>
+    <text name="Off">Off</text>
+    <text name="AreYouSureWantToDelete">Are you sure want to delete {0}?</text>
+    <text name="StartTyping">Start Typing</text>
+    <text name="Skins">Skins</text>
+    <text name="Settings">Settings</text>
     
   </texts>
 </localizationDictionary>
